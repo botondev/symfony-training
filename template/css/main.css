@@ -21,6 +21,10 @@ a
   color: #524F46;
 }
 
+.clearfix{
+  clear:both;
+}
+
 body
 {
   font: 14px georgia,times,serif;
@@ -32,23 +36,37 @@ body
 width: 960px;
 margin: 0 auto;
 }
+
+.nav{
+  float:left;
+}
+
 .nav ul{
 	height: 32px;
 }
 .nav ul li{
 	float: left;
 }
-.nav ul li a{
+.nav ul li a, .nav-menu li a{
 	display: block;
 	padding: 8px 15px 9px 15px;
 	font-size: 85%;
 	color: #e3b7a6;
 	text-decoration: none;
 	}
-.nav ul li a:hover{
+.nav ul li a:hover, .nav-menu li a:hover{
 	background: #bb3400;
 	color: #fff;
 	}
+
+.nav-menu{
+  float:right;
+}
+
+.nav-menu li{
+  float:left;
+}
+
 #search_keywords
 {
   font-size: 160%;
