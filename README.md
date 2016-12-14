@@ -27,15 +27,15 @@ A Visitor can register with his email and a username and a password to became a 
 
 A User can post a job. A job is made of several pieces of information:
 
-*Company
-*Type (full-time, part-time, or freelance)
-*URL (optional)
-*Position
-*Location
-*Category (the user chooses in a list of possible categories)
-*Job description (URLs and emails are automatically linked)
-*How to apply (URLs and emails are automatically linked)
-*Email (email of the poster)
+Company
+Type (full-time, part-time, or freelance)
+URL (optional)
+Position
+Location
+Category (the user chooses in a list of possible categories)
+Job description (URLs and emails are automatically linked)
+How to apply (URLs and emails are automatically linked)
+Email (email of the poster)
 
 The process has only one steps: first, the User fills in the form with all the needed information to describe the job.
 
@@ -53,8 +53,8 @@ An Admin can edit and remove any posted job.
 An admin can edit, add and remove informations.
 
 An information has:
-*Title
-*Description
+Title
+Description
 
 ##Story10: An Admin manages menus##
 An admin can group informations to make menus as you can see on the footer and the header of the website.
