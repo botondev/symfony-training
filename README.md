@@ -28,8 +28,8 @@ A Visitor can register with his email and a username and a password to became a 
 A User can post a job. A job is made of several pieces of information:
 
 Company
-Type (full-time, part-time, or freelance)
-URL (optional)
+* Type (full-time, part-time, or freelance)
+* URL (optional)
 Position
 Location
 Category (the user chooses in a list of possible categories)
