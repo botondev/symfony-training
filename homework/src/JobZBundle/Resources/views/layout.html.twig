@@ -9,8 +9,13 @@
         <div id="header">
             <div class="nav">
                 <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="registration.html">Registration</a></li>
+                    {% if app.user %}
+                        <li><a href="#">Hello {{ app.user.username }} !</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+                    {% else %}
+                        <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                        <li><a href="{{ path('fos_user_registration_register') }}">Registration</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="nav-menu">
@@ -19,7 +24,7 @@
             <div class="clearfix"></div>
             <div class="content">
                 <h1>
-                    <a href="index.html"><img src="{{ asset('bundles/jobz/images/jobz.gif') }}"></a>
+                    <a href="{{ path('jobz_default_index') }}"><img src="{{ asset('bundles/jobz/images/jobz.gif') }}"></a>
                 </h1>
                 <div id="sub_header">
                     <div class="post">
@@ -27,7 +32,7 @@
                             Ask for people
                         </h2>
                         <div>
-                            <a href="post.html">Change me | Post a Job</a>
+                            <a href="{{ path('job_new') }}">Post a Job</a>
                         </div>
                     </div>
                     <div class="search">
