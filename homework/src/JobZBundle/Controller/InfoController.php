@@ -60,7 +60,7 @@ class InfoController extends Controller
     /**
      * Finds and displays a info entity.
      *
-     * @Route("/{id}", name="info_show")
+     * @Route("/{id}/show", name="info_show")
      * @Method("GET")
      */
     public function showAction(Info $info)
@@ -70,6 +70,21 @@ class InfoController extends Controller
         return $this->render('info/show.html.twig', array(
             'info' => $info,
             'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a info entity.
+     *
+     * @Route("/{id}", name="info_display")
+     * @Method("GET")
+     */
+    public function displayAction(Info $info)
+    {
+        $deleteForm = $this->createDeleteForm($info);
+
+        return $this->render('info/display.html.twig', array(
+            'info' => $info,
         ));
     }
 

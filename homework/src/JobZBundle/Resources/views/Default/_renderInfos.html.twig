@@ -1,0 +1,5 @@
+<ul>
+    {% for info in infos %}
+        <li><a href="{{ path('info_display', {id: info.id}) }}">{{ info.title }}</a></li>
+    {% endfor %}
+</ul>

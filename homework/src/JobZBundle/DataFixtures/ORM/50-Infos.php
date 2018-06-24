@@ -35,6 +35,19 @@ class Infos extends AbstractFixture implements OrderedFixtureInterface
         $aboutUs->setDisplayAt("header");
         $aboutUs->setPositionOrder(1);
 
+        $postingAJob = new Info();
+        $postingAJob->setTitle("Posting a job");
+        $postingAJob->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros non nisl tempus euismod sed vitae odio. Integer egestas lectus in massa placerat scelerisque. Vivamus tempus sem eget sem tincidunt efficitur. Fusce bibendum tellus aliquet turpis porta, non consectetur nunc luctus. Fusce neque quam, pulvinar eget dignissim eu, tempor non orci. Vivamus vitae nunc id elit sollicitudin finibus imperdiet vitae mauris. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut hendrerit rutrum porttitor. Nulla facilisi. Fusce vitae magna neque. Proin in posuere purus. Proin euismod ex placerat lorem viverra, quis maximus est imperdiet. Phasellus ultricies leo eu erat pretium auctor. Vestibulum lorem eros, auctor in nisl quis, porttitor pellentesque tortor. Phasellus a ex non ipsum ornare efficitur id non massa. Nunc lacus odio, facilisis ut tempor in, fringilla nec nibh. Nullam mi mauris, molestie et elementum a, sagittis eget neque. Sed vitae lectus ullamcorper, venenatis velit ut, volutpat libero. Nulla cursus quis est vitae facilisis. Donec viverra ac tortor ac mollis. Sed eget dictum justo, nec porta est. Fusce tincidunt, lacus vel accumsan vehicula, metus neque pulvinar erat, a rhoncus leo dolor eget odio. Vestibulum eget dui sed odio malesuada condimentum id a turpis. Cras cursus, quam nec convallis vulputate, lectus nulla volutpat nibh, vitae pharetra enim magna quis neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
+        $postingAJob->setDisplayAt("header");
+        $postingAJob->setPositionOrder(2);
+
+        $becomeAMember = new Info();
+        $becomeAMember->setTitle("Become a member");
+        $becomeAMember->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros non nisl tempus euismod sed vitae odio. Integer egestas lectus in massa placerat scelerisque. Vivamus tempus sem eget sem tincidunt efficitur. Fusce bibendum tellus aliquet turpis porta, non consectetur nunc luctus. Fusce neque quam, pulvinar eget dignissim eu, tempor non orci. Vivamus vitae nunc id elit sollicitudin finibus imperdiet vitae mauris. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut hendrerit rutrum porttitor. Nulla facilisi. Fusce vitae magna neque. Proin in posuere purus. Proin euismod ex placerat lorem viverra, quis maximus est imperdiet. Phasellus ultricies leo eu erat pretium auctor. Vestibulum lorem eros, auctor in nisl quis, porttitor pellentesque tortor. Phasellus a ex non ipsum ornare efficitur id non massa. Nunc lacus odio, facilisis ut tempor in, fringilla nec nibh. Nullam mi mauris, molestie et elementum a, sagittis eget neque. Sed vitae lectus ullamcorper, venenatis velit ut, volutpat libero. Nulla cursus quis est vitae facilisis. Donec viverra ac tortor ac mollis. Sed eget dictum justo, nec porta est. Fusce tincidunt, lacus vel accumsan vehicula, metus neque pulvinar erat, a rhoncus leo dolor eget odio. Vestibulum eget dui sed odio malesuada condimentum id a turpis. Cras cursus, quam nec convallis vulputate, lectus nulla volutpat nibh, vitae pharetra enim magna quis neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
+        $becomeAMember->setDisplayAt("header");
+        $becomeAMember->setPositionOrder(3);
+
+
         $about = new Info();
         $about->setTitle("About us");
         $about->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac eros non nisl tempus euismod sed vitae odio. Integer egestas lectus in massa placerat scelerisque. Vivamus tempus sem eget sem tincidunt efficitur. Fusce bibendum tellus aliquet turpis porta, non consectetur nunc luctus. Fusce neque quam, pulvinar eget dignissim eu, tempor non orci. Vivamus vitae nunc id elit sollicitudin finibus imperdiet vitae mauris. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut hendrerit rutrum porttitor. Nulla facilisi. Fusce vitae magna neque. Proin in posuere purus. Proin euismod ex placerat lorem viverra, quis maximus est imperdiet. Phasellus ultricies leo eu erat pretium auctor. Vestibulum lorem eros, auctor in nisl quis, porttitor pellentesque tortor. Phasellus a ex non ipsum ornare efficitur id non massa. Nunc lacus odio, facilisis ut tempor in, fringilla nec nibh. Nullam mi mauris, molestie et elementum a, sagittis eget neque. Sed vitae lectus ullamcorper, venenatis velit ut, volutpat libero. Nulla cursus quis est vitae facilisis. Donec viverra ac tortor ac mollis. Sed eget dictum justo, nec porta est. Fusce tincidunt, lacus vel accumsan vehicula, metus neque pulvinar erat, a rhoncus leo dolor eget odio. Vestibulum eget dui sed odio malesuada condimentum id a turpis. Cras cursus, quam nec convallis vulputate, lectus nulla volutpat nibh, vitae pharetra enim magna quis neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.");
@@ -60,6 +73,9 @@ class Infos extends AbstractFixture implements OrderedFixtureInterface
         $affiliates->setPositionOrder(4);
 
         $manager->persist($aboutUs);
+        $manager->persist($postingAJob);
+        $manager->persist($becomeAMember);
+
         $manager->persist($about);
         $manager->persist($contact);
         $manager->persist($jobZApi);

@@ -52,4 +52,17 @@ class DefaultController extends Controller
 
         return $jobsByCategories;
     }
+
+    public function _renderInfosAction($position)
+    {
+        $infos = $this->getDoctrine()->getRepository('JobZBundle:Info')
+            ->findBy(
+                array('displayAt' => $position),
+                array('positionOrder' => 'ASC')
+                );
+
+        return $this->render('JobZBundle:Default:_renderInfos.html.twig', array(
+            "infos" => $infos
+        ));
+    }
 }

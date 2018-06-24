@@ -1,0 +1,8 @@
+{% extends 'JobZBundle::layout.html.twig' %}
+{% block title %}{{ info.title }}{% endblock %}
+{% block content %}
+    <h2 class="heading">{{ info.title }}</h2>
+    <p>
+        {{ info.description }}
+    </p>
+{% endblock %}
