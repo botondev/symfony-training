@@ -11,6 +11,9 @@ namespace JobZBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use JobZBundle\Entity\Job;
 
 /**
  * @ORM\Entity
@@ -25,9 +28,33 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @var array
+     *
+     * @ORM\OneToMany(targetEntity="Job", mappedBy="user", cascade={"persist"})
+     */
+    private $jobs;
+
+    /**
+     * @return array
+     */
+    public function getJobs()
+    {
+        return $this->jobs;
+    }
+
+    /**
+     * @param array $jobs
+     */
+    public function setJobs($jobs)
+    {
+        $this->jobs = $jobs;
+    }
+
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+
+        $this->jobs = new ArrayCollection();
     }
 }
