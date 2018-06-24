@@ -120,7 +120,7 @@ class Job
     /**
      * Set jobType
      *
-     * @param \stdClass $jobType
+     * @param \JobZBundle\Entity\JobType $jobType
      *
      * @return Job
      */
@@ -134,7 +134,7 @@ class Job
     /**
      * Get jobType
      *
-     * @return \stdClass
+     * @return \JobZBundle\Entity\JobType
      */
     public function getJobType()
     {
@@ -144,7 +144,7 @@ class Job
     /**
      * Set category
      *
-     * @param \stdClass $category
+     * @param \JobZBundle\Entity\Category $category
      *
      * @return Job
      */
@@ -158,7 +158,7 @@ class Job
     /**
      * Get category
      *
-     * @return \stdClass
+     * @return \JobZBundle\Entity\Category
      */
     public function getCategory()
     {

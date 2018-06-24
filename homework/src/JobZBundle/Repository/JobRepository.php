@@ -2,6 +2,8 @@
 
 namespace JobZBundle\Repository;
 
+use JobZBundle\Entity\Category;
+
 /**
  * JobRepository
  *
@@ -10,4 +12,24 @@ namespace JobZBundle\Repository;
  */
 class JobRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @param int $amount
+     * @return array
+     */
+    public function findLatest($amount = 1)
+    {
+        $qb = $this->getQueryBuilder()->orderBy('j.id', 'asc')
+            ->setMaxResults($amount);
+        return $qb->getQuery()->getResult();
+    }
+
+    private function getQueryBuilder()
+    {
+        $em = $this->getEntityManager();
+
+        $qb = $em->getRepository('JobZBundle:Job')
+            ->createQueryBuilder('j');
+
+        return $qb;
+    }
 }
