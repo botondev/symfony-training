@@ -3,6 +3,7 @@
 namespace JobZBundle\Repository;
 
 use JobZBundle\Entity\Category;
+use Doctrine\ORM\Query\Expr\Join;
 
 /**
  * JobRepository
@@ -20,6 +21,20 @@ class JobRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->getQueryBuilder()->orderBy('j.id', 'asc')
             ->setMaxResults($amount);
+        return $qb->getQuery()->getResult();
+    }
+
+    public function findByKeyword($keyword)
+    {
+        $qb = $this->getQueryBuilder()->
+            setParameter('kw', "%{$keyword}%")
+            ->innerJoin('j.category', 'c')
+            ->where('j.position like :kw')
+            ->orWhere('j.location like :kw')
+            ->orWhere('j.company like :kw')
+            ->orWhere('c.name like :kw')
+            ->orderBy('j.id', 'asc');
+
         return $qb->getQuery()->getResult();
     }
 

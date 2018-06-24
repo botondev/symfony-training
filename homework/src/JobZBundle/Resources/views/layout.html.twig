@@ -39,10 +39,10 @@
                         <h2>
                             Ask for a job
                         </h2>
-                        <form action="" method="get">
-                            <input name="keywords" id="search_keywords" class="input" type="text"><input value="search" src="{{ asset('bundles/jobz/images/search.png') }}" class="but_search" type="image">
+                        <form action="{{ path('jobz_default_index') }}" method="get">
+                            <input name="keyword" id="search_keywords" class="input" type="text" value="{{ app.request.get("keyword") }}"><input value="search" src="{{ asset('bundles/jobz/images/search.png') }}" class="but_search" type="image">
                             <div class="help">
-                                Change me | I am a template yet | Enter some keywords (city, country, position, ...)
+                                Enter some keywords (city, country, position, ...)
                             </div>
                         </form>
                     </div>

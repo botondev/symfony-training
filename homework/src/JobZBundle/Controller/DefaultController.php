@@ -5,16 +5,35 @@ namespace JobZBundle\Controller;
 use JobZBundle\Entity\Job;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $jobs = $this->getDoctrine()->getRepository('JobZBundle:Job')->findLatest(10);
+        $keyword = $request->query->get('keyword');
+        $repo = $this->getDoctrine()->getRepository('JobZBundle:Job');
+        $jobs = array();
+        if($keyword) {
+            $jobs = $repo->findByKeyword($keyword);
+        } else {
+            $jobs = $repo->findLatest(10);
+        }
+
+        $jobsByCategories = $this->groupJobsByCategories($jobs);
+
+        return $this->render('JobZBundle:Default:index.html.twig', array(
+            "jobsByCategories" => $jobsByCategories
+        ));
+    }
+
+    private function groupJobsByCategories($jobs)
+    {
         $jobsByCategories = array();
+
         /**
          * @var Job $job
          */
@@ -31,8 +50,6 @@ class DefaultController extends Controller
 
         ksort($jobsByCategories);
 
-        return $this->render('JobZBundle:Default:index.html.twig', array(
-            "jobsByCategories" => $jobsByCategories
-        ));
+        return $jobsByCategories;
     }
 }
