@@ -93,5 +93,10 @@ class JobType
     {
         $this->jobs = $jobs;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
 
