@@ -1,1 +1,64 @@
-Hello World!
+{% extends 'JobZBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>CHANGE ME, I AM ONLY A TEMPLATE YET</h1>
+    <div class="content">
+        <div id="jobs">
+            <div class="category_design">
+                <div class="category">
+                    <h1>
+                        <a href="category.html">Design</a>
+                    </h1>
+                </div>
+                <table class="jobs">
+                    <tbody>
+                    <tr class="odd">
+                        <td class="location">
+                            Paris, France
+                        </td>
+                        <td class="position">
+                            <a href="job.html">Web Designer</a>
+                        </td>
+                        <td class="company">
+                            Extreme Sensio
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="category_programming">
+                <div class="category">
+                    <h1>
+                        <a href="category.html">Programming</a>
+                    </h1>
+                </div>
+                <table class="jobs">
+                    <tbody>
+                    <tr class="odd">
+                        <td class="location">
+                            Paris, France
+                        </td>
+                        <td class="position">
+                            <a href="job.html">Web Developer</a>
+                        </td>
+                        <td class="company">
+                            Sensio Labs
+                        </td>
+                    </tr>
+                    <tr class="even">
+                        <td class="location">
+                            Paris, France
+                        </td>
+                        <td class="position">
+                            <a href="job.html">Web Developer</a>
+                        </td>
+                        <td class="company">
+                            Sensio Labs
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
