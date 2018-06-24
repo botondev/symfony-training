@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Info</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ info.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ info.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ info.description }}</td>
+            </tr>
+            <tr>
+                <th>Displayat</th>
+                <td>{{ info.displayAt }}</td>
+            </tr>
+            <tr>
+                <th>Positionorder</th>
+                <td>{{ info.positionOrder }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('info_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('info_edit', { 'id': info.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

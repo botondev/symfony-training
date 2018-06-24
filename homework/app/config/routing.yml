@@ -1,3 +1,15 @@
+job_z_info:
+    resource: "@JobZBundle/Controller/InfoController.php"
+    type:     annotation
+
+job_z_category:
+    resource: "@JobZBundle/Controller/CategoryController.php"
+    type:     annotation
+
+job_z_job:
+    resource: "@JobZBundle/Controller/JobController.php"
+    type:     annotation
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Infos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Displayat</th>
+                <th>Positionorder</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info in infos %}
+            <tr>
+                <td><a href="{{ path('info_show', { 'id': info.id }) }}">{{ info.id }}</a></td>
+                <td>{{ info.title }}</td>
+                <td>{{ info.description }}</td>
+                <td>{{ info.displayAt }}</td>
+                <td>{{ info.positionOrder }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('info_show', { 'id': info.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('info_edit', { 'id': info.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('info_new') }}">Create a new info</a>
+        </li>
+    </ul>
+{% endblock %}
