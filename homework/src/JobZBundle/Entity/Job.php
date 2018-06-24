@@ -5,6 +5,7 @@ namespace JobZBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 use JobZBundle\Entity\JobType;
 use JobZBundle\Entity\Category;
 use JobZBundle\Entity\User;
@@ -90,7 +91,6 @@ class Job
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
@@ -102,6 +102,10 @@ class Job
      */
     private $company;
 
+    public function __construct()
+    {
+        $this->created = new \DateTime('now');
+    }
 
     /**
      * Get id
