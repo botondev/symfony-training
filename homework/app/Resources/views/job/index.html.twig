@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'JobZBundle::layout.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h1>Jobs list</h1>
 
     <table>
@@ -20,7 +20,7 @@
         <tbody>
         {% for job in jobs %}
             <tr>
-                <td><a href="{{ path('job_show', { 'id': job.id }) }}">{{ job.id }}</a></td>
+                <td><a href="{{ path('job_display', { 'id': job.id }) }}">{{ job.id }}</a></td>
                 <td>{{ job.url }}</td>
                 <td>{{ job.position }}</td>
                 <td>{{ job.location }}</td>

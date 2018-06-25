@@ -64,8 +64,8 @@ class JobController extends Controller
 
     /**
      * Finds and displays a job entity.
-     *
-     * @Route("/{id}", name="job_show")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Route("/{id}/show", name="job_show")
      * @Method("GET")
      */
     public function showAction(Job $job)
@@ -75,6 +75,19 @@ class JobController extends Controller
         return $this->render('job/show.html.twig', array(
             'job' => $job,
             'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a job entity.
+     * @Security("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
+     * @Route("/{id}", name="job_display")
+     * @Method("GET")
+     */
+    public function displayAction(Job $job)
+    {
+        return $this->render('job/display.html.twig', array(
+            'job' => $job
         ));
     }
 

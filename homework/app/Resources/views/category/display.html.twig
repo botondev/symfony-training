@@ -18,7 +18,7 @@
                                 {{ job.location }}
                             </td>
                             <td class="position">
-                                <a href="job.html">{{ job.position }}</a>
+                                <a href="{{ path('job_display', { 'id': job.id }) }}">{{ job.position }}</a>
                             </td>
                             <td class="company">
                                 {{ job.company }}
