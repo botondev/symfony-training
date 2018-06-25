@@ -32,6 +32,22 @@ class Category
     private $jobs;
 
     /**
+     * @return array
+     */
+    public function getJobs()
+    {
+        return $this->jobs;
+    }
+
+    /**
+     * @param array $jobs
+     */
+    public function setJobs($jobs)
+    {
+        $this->jobs = $jobs;
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)

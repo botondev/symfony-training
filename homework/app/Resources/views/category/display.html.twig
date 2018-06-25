@@ -1,0 +1,33 @@
+{% extends 'JobZBundle::layout.html.twig' %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block content %}
+
+    <div class="content">
+        <div id="jobs">
+            <div class="category_programming">
+                <div class="category">
+                    <h1>
+                        <a href="#">{{ category.name }}</a>
+                    </h1>
+                </div>
+                <table class="jobs">
+                    <tbody>
+                    {% for job in category.jobs %}
+                        <tr class= {{ (loop.index % 2) == 0 ? "even" : "odd" }}>
+                            <td class="location">
+                                {{ job.location }}
+                            </td>
+                            <td class="position">
+                                <a href="job.html">{{ job.position }}</a>
+                            </td>
+                            <td class="company">
+                                {{ job.company }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

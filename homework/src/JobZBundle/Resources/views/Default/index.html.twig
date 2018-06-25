@@ -12,13 +12,12 @@
                 <div class="category_design">
                     <div class="category">
                         <h1>
-                            <a href="category.html">{{ cat }}</a>
+                            <a href="{{ path('category_display',{id:jobs[0].category.id}) }}">{{ cat }}</a>
                         </h1>
                     </div>
                     <table class="jobs">
                         <tbody>
                         {% for job in jobs %}
-                            {#even#}
                             <tr class= {{ (loop.index % 2) == 0 ? "even" : "odd" }}>
                                 <td class="location">
                                     {{ job.location }}
