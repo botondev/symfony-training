@@ -1,0 +1,10 @@
+{% extends 'JobZBundle::layout.html.twig' %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/jobz/css/jobs.css') }}">
+{% endblock %}
+{% block section %}
+    {% block content %}
+        {% block fos_user_content %}{% endblock %}
+    {% endblock %}
+{% endblock %}
