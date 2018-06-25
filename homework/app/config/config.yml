@@ -80,3 +80,8 @@ doctrine_migrations:
     table_name: migration_versions
     name: Application Migrations
     organize_migrations: false
+
+liip_url_auto_converter:
+    linkclass:
+    target: _blank
+    debugmode: false

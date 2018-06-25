@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new JobZBundle\JobZBundle(),
             new \FOS\UserBundle\FOSUserBundle(),
-            new \ChildFosUserBundle\ChildFosUserBundle()
+            new \ChildFosUserBundle\ChildFosUserBundle(),
+            new Liip\UrlAutoConverterBundle\LiipUrlAutoConverterBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

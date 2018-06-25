@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <th>Url</th>
-                <td>{{ job.url }}</td>
+                <td>{{ job.url | converturls }}</td>
             </tr>
             <tr>
                 <th>Position</th>
@@ -23,11 +23,11 @@
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ job.description }}</td>
+                <td>{{ job.description | converturls }}</td>
             </tr>
             <tr>
                 <th>Howtoapply</th>
-                <td>{{ job.howToApply }}</td>
+                <td>{{ job.howToApply | converturls}}</td>
             </tr>
             <tr>
                 <th>Created</th>
@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <th>Email</th>
-                <td>{{ job.user.email }}</td>
+                <td>{{ job.user.email | converturls }}</td>
             </tr>
         </tbody>
     </table>
