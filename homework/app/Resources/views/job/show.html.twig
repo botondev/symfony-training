@@ -1,7 +1,7 @@
-{% extends 'base.html.twig' %}
+{% extends 'JobZBundle::layout.html.twig' %}
 
-{% block body %}
-    <h1>Job</h1>
+{% block content %}
+    <h1>{{ job.position }}</h1>
 
     <table>
         <tbody>
@@ -36,6 +36,10 @@
             <tr>
                 <th>Company</th>
                 <td>{{ job.company }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ job.user.email }}</td>
             </tr>
         </tbody>
     </table>

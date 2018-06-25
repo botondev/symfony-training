@@ -1,4 +1,9 @@
 services:
+    app.form.type.task:
+        class: JobZBundle\Form\JobType
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: form.type }
 #    job_z.example:
 #        class: JobZBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]

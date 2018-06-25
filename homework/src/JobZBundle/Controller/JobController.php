@@ -40,8 +40,11 @@ class JobController extends Controller
     public function newAction(Request $request)
     {
         $job = new Job();
+        $user = $this->getUser();
+        $job->setUser($user);
         $form = $this->createForm('JobZBundle\Form\JobType', $job);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
