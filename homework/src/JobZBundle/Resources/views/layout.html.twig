@@ -12,7 +12,7 @@
             <div class="nav">
                 <ul>
                     {% if app.user %}
-                        <li><a href="#">Hello {{ app.user.username }} !</a></li>
+                        <li><a href="{{ path('jobz_default_index') }}">Hello {{ app.user.username }} !</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
                     {% else %}
                         <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>

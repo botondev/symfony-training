@@ -1,8 +1,56 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
+<div class="content">
+    <h1>
+        Registration
+    </h1>
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        <table id="job_form">
+            <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                </td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+                <th>
+                    {{ form_label(form.username) }}
+                </th>
+                <td>
+                    {{ form_widget(form.username) }}
+                    {{ form_errors(form.username) }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{ form_label(form.email) }}
+                </th>
+                <td>
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{ form_label(form.plainPassword.first) }}
+                </th>
+                <td>
+                    {{ form_widget(form.plainPassword.first) }}
+                    {{ form_errors(form.plainPassword.first) }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{ form_label(form.plainPassword.second) }}
+                </th>
+                <td>
+                    {{ form_widget(form.plainPassword.second) }}
+                    {{ form_errors(form.plainPassword.second) }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    {{ form_end(form) }}
+</div>
