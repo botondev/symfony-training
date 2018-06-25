@@ -5,7 +5,9 @@ namespace JobZBundle\Controller;
 use JobZBundle\Entity\Job;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Job controller.
@@ -33,7 +35,7 @@ class JobController extends Controller
 
     /**
      * Creates a new job entity.
-     *
+     * @Security("has_role('ROLE_USER')")
      * @Route("/new", name="job_new")
      * @Method({"GET", "POST"})
      */
@@ -78,7 +80,7 @@ class JobController extends Controller
 
     /**
      * Displays a form to edit an existing job entity.
-     *
+     * @Security("has_role('ROLE_ADMIN')")
      * @Route("/{id}/edit", name="job_edit")
      * @Method({"GET", "POST"})
      */
@@ -103,7 +105,7 @@ class JobController extends Controller
 
     /**
      * Deletes a job entity.
-     *
+     * @Security("has_role('ROLE_ADMIN')")
      * @Route("/{id}", name="job_delete")
      * @Method("DELETE")
      */

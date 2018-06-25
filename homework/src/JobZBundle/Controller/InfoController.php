@@ -5,11 +5,13 @@ namespace JobZBundle\Controller;
 use JobZBundle\Entity\Info;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Info controller.
- *
+ * @Security("has_role('ROLE_ADMIN')")
  * @Route("info")
  */
 class InfoController extends Controller
@@ -75,7 +77,7 @@ class InfoController extends Controller
 
     /**
      * Finds and displays a info entity.
-     *
+     * @Security("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
      * @Route("/{id}", name="info_display")
      * @Method("GET")
      */

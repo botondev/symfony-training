@@ -5,11 +5,13 @@ namespace JobZBundle\Controller;
 use JobZBundle\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Category controller.
- *
+ * @Security("has_role('ROLE_ADMIN')")
  * @Route("category")
  */
 class CategoryController extends Controller
@@ -59,7 +61,7 @@ class CategoryController extends Controller
 
     /**
      * Finds and displays a category entity.
-     *
+     * @Security("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
      * @Route("/{id}", name="category_display")
      * @Method("GET")
      */
